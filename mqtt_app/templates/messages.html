@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MQTT Messages</title>
+</head>
+<body>
+    <h1>Received MQTT Messages</h1>
+    <table border="1">
+        <tr>
+            <th>Topic</th>
+            <th>Payload</th>
+            <th>Received At</th>
+        </tr>
+        {% for message in messages %}
+        <tr>
+            <td>{{ message.topic }}</td>
+            <td>{{ message.payload }}</td>
+            <td>{{ message.received_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
