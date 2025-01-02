@@ -25,8 +25,8 @@ SECRET_KEY = "django-insecure-z=8u*8lukjk_i1-*heiz1prc4*ywt8r6=z%*ol@+aey!f+&5z7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 # Application definition
 
@@ -74,11 +74,12 @@ WSGI_APPLICATION = "mqtt_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#COMMENTED THE DB AS VERCEL SUPPORTS POSTGRESQL CURRENTLY
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
 }
 
 
@@ -130,3 +131,7 @@ MQTT_PORT = 1883
 MQTT_KEEPALIVE = 60
 MQTT_USER = ''
 MQTT_PASSWORD = ''
+
+#VERCEL CONFIGURATION
+STATICFILES_DIRS = [BASE_DIR/'static',]
+STATIC_ROOT = BASE_DIR/'staticfiles'
